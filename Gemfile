@@ -13,6 +13,9 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 #replace default rais server
 gem 'puma'
 
+#pretty html
+gem 'slim'
+
 #templating engine
 gem 'bootstrap-sass'
 #user login
