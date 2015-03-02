@@ -18,6 +18,9 @@ gem 'slim'
 
 #templating engine
 gem 'bootstrap-sass'
+gem 'font-awesome-rails'
+#image store
+gem 'dragonfly', '~> 1.0.7'
 #user login
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
