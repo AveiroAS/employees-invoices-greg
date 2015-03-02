@@ -9,6 +9,7 @@ class CreateUsers < ActiveRecord::Migration
       t.string :token
       t.string :image_name
       t.string :image_uid
+      t.timestamps nil: false
     end
     add_index :users, [:uid, :provider]
     add_index :users, :token

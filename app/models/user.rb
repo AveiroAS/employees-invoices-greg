@@ -3,6 +3,12 @@ class User < ActiveRecord::Base
 
   dragonfly_accessor :image
 
+  has_many :roles
+
+  def has_role?(role)
+    roles.where(role: Role.roles[role.to_s]).present?
+  end
+
   def name
     "#{first_name} #{last_name}"
   end

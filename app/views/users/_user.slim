@@ -1,3 +1,9 @@
 td= image_tag user.image.thumb('40x40#').url if user.image_stored?
 td= user.name
 td= user.email
+- %w(accounting ceo employee).each do |role|
+  td
+    - if user.has_role?(role)
+      = link_to "Withdraw role: #{role}", withdraw_role_user_path(user, role: role), class: 'btn btn-danger', method: :post
+    - else
+      = link_to "Assign role: #{role}", assign_role_user_path(user, role: role),class: 'btn btn-success', method: :post
