@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   def index
     redirect_to root_path, alert: "You do not have requried privilage to see the list of users." unless current_user.has_role?("ceo")
     @users = User.all
+    @aveiro = "company"
   end
 
   def assign_role

@@ -11,7 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302160939) do
+ActiveRecord::Schema.define(version: 20150303094410) do
+
+  create_table "documents", force: :cascade do |t|
+    t.integer  "user_id"
+    t.string   "file_name"
+    t.string   "file_uid"
+    t.string   "name"
+    t.text     "description"
+    t.float    "amount"
+    t.boolean  "approved"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  add_index "documents", ["user_id"], name: "index_documents_on_user_id"
 
   create_table "roles", force: :cascade do |t|
     t.integer  "user_id"

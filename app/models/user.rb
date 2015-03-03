@@ -3,7 +3,8 @@ class User < ActiveRecord::Base
 
   dragonfly_accessor :image
 
-  has_many :roles
+  has_many :roles, dependent: :destroy
+  has_many :documents
 
   def has_role?(role)
     roles.where(role: Role.roles[role.to_s]).present?

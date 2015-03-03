@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :documents
+
   root 'dashboard#home'
   resources :users do
     member do
